@@ -1,0 +1,33 @@
+
+
+<h1 mat-dialog-title>{{actionType == 'book' ? 'Book' : 'Update'}} Slot</h1>
+<div mat-dialog-content>
+    <form [formGroup]="formGroup" (ngSubmit)="manageSlot()">
+
+        <mat-form-field class="control" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" formControlName="firstName">
+            <mat-hint>Enter your first name.</mat-hint>
+            <mat-error>Required field. Please enter valid data.</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="control" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" formControlName="lastName">
+            <mat-hint>Enter your last name.</mat-hint>
+            <mat-error>Required field. Please enter valid data.</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="control" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-hint>Enter your email address.</mat-hint>
+            <mat-error>Required field. Please enter a valid email.</mat-error>
+          </mat-form-field>
+    
+
+    <button [disabled]="formGroup.invalid" type="submit"
+     mat-button >Submit</button>
+  <button type="button" mat-button (click)="onNoClick()">Cancel</button>
+</form>
+</div>

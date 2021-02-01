@@ -1,0 +1,10 @@
+<h2>Book your slot</h2>
+
+<mat-card [class.booked-slot]="bookedSlotsIds?.indexOf(item.slotId) != -1" class="slot-card" *ngFor="let item of timeslots">
+    <h3 class="title no-margin">{{item.startTime}} - {{item.endTime}}</h3>
+    <p class="info no-margin"> {{bookedSlotsIds?.indexOf(item.slotId) != -1 ? 'Booked!' : 'Available'}}</p>
+     <span class="spacer"></span>
+    <button mat-raised-button color="primary"
+     (click)="openDialog(item.slotId, bookedSlotsIds?.indexOf(item.slotId) != -1 ? 'update' : 'book')">
+     {{bookedSlotsIds?.indexOf(item.slotId) != -1 ? 'Update' : 'Book'}}</button>
+</mat-card>

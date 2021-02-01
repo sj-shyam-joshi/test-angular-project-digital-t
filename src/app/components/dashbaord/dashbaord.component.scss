@@ -1,0 +1,32 @@
+.slot-card{
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    
+    .title{
+        min-width: 200px;
+    }
+
+    &:not(.booked-slot){
+        .info{
+            color: green;
+        }
+    }
+
+    &.booked-slot{
+        background: rgba(255, 0, 0, .2);
+
+        .info{
+            color: red;
+        }
+    }
+    
+    &:first-child{
+        margin-top: 16px;
+    }
+
+    .spacer{
+      flex: 1 1 0;
+    }
+
+}
